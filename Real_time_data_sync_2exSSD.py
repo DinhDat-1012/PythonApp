@@ -13,8 +13,8 @@ import threading
 # ======================================================================================================
 # GLOBAL CONFIG
 # ======================================================================================================
-TODAY_STRING = "20250219"
-VEHICLE_ID = "VFTEST"
+TODAY_STRING = datetime.today().strftime("%Y%m%d")
+VEHICLE_ID = os.getenv("VEHICLE_ID")
 SSD_MOUNT_PATH = '/mnt/dsu0/'
 SSD_FREE = 0
 LOCK_FILE = '/home/autera-admin/python/sync.lock'
