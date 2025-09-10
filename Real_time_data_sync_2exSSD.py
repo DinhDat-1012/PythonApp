@@ -325,7 +325,7 @@ def submit_date():
     # Kiểm tra định dạng ngày (YYYYMMDD)
     if len(value) == 8 and value.isdigit():
         TODAY_STRING = value
-        DATE_var.set(f"Date: {TODAY_STRING}")
+        DATE_var.set(f"{TODAY_STRING}")
         add_log(f"Date set to: {value}")
         logging.info(f"Date input: {value}")
     else:
@@ -337,7 +337,7 @@ def submit_vehicle_id():
     value = VEHICLE_ID_input_entry.get()
     if value: # Kiểm tra không rỗng
         VEHICLE_ID = value
-        VEHICLE_ID_var.set(f"Vehicle identity: {VEHICLE_ID}")
+        VEHICLE_ID_var.set(f"VEID: {VEHICLE_ID}")
         add_log(f"VEHICLE_ID set to: {value}")
         logging.info("VEHICLE_ID:%s", value)
     else:
@@ -507,8 +507,8 @@ tk.Label(root, text="VEHIVLE_ID (format VFX, ex: VF8FL2_VN_LS1551):").place(x=0,
 VEHICLE_ID_input_entry = tk.Entry(root)
 VEHICLE_ID_input_entry.place(x=10, y=110)
 
-tk.Label(root,textvariable=VEHICLE_ID_var,font=("Arial", 8)).place(x=489, y=270)
-tk.Label(root,textvariable=DATE_var,font=("Arial", 8)).place(x=489, y=285)
+tk.Label(root,textvariable=VEHICLE_ID_var,font=("Arial", 8)).place(x=200, y=120)
+tk.Label(root,textvariable=DATE_var,font=("Arial", 8)).place(x=200, y=65)
 
 VEHICLE_ID_input_submit_btn = tk.Button(root, height=1, width=4, text="submit",command=submit_vehicle_id)
 VEHICLE_ID_input_submit_btn.place(x=300, y=105)
